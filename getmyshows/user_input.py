@@ -23,15 +23,15 @@ def get_arg_parser():
     return arg_parser
 
 
-def parse_size_arg(size_string):
-    return humanfriendly.parse_size(size_string, binary=True)
+def parse_filesize_arg(filesize_string):
+    return humanfriendly.parse_size(filesize_string, binary=True)
 
 
 def main():
     returned_arg_parser = get_arg_parser()
     args, unknown_args = returned_arg_parser.parse_known_args()
 
-    parsed_size = parse_size_arg(args.size)
+    parsed_size_integer_bytes = parse_filesize_arg(args.size)
     pass
 
 
