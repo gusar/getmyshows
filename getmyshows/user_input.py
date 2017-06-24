@@ -15,7 +15,7 @@ def get_arg_parser():
                             action="store",
                             type=str,
                             help="Search keywords in tags/name separated by comma.")
-    arg_parser.add_argument("-s", "--size",
+    arg_parser.add_argument("-s", "--filesize",
                             required=True,
                             action="store",
                             type=str,
