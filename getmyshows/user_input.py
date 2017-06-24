@@ -27,11 +27,17 @@ def parse_filesize_arg(filesize_string):
     return humanfriendly.parse_size(filesize_string, binary=True)
 
 
+def split_tags_to_list(tags_string):
+    return tags_string.split(',')
+
+
 def main():
     returned_arg_parser = get_arg_parser()
     args, unknown_args = returned_arg_parser.parse_known_args()
 
-    parsed_size_integer_bytes = parse_filesize_arg(args.size)
+    parsed_size_integer_bytes = parse_filesize_arg(args.filesize)
+
+    tags_list = split_tags_to_list(args.tags)
     pass
 
 
