@@ -31,15 +31,20 @@ def split_tags_to_list(tags_string):
     return tags_string.split(',')
 
 
-def main():
+def parse_user_input():
     returned_arg_parser = get_arg_parser()
     args, unknown_args = returned_arg_parser.parse_known_args()
 
     parsed_size_integer_bytes = parse_filesize_arg(args.filesize)
-
     tags_list = split_tags_to_list(args.tags)
-    pass
+    show_name = args.name
+
+    return {
+        'name': show_name,
+        'tags': tags_list,
+        'size': parsed_size_integer_bytes
+    }
 
 
 if __name__ == '__main__':
-    main()
+    parse_user_input()
