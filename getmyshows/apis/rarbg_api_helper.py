@@ -6,6 +6,7 @@ from getmyshows.apis.base_api_helper import BaseAPIHelper
 class RarbgAPIHelper(BaseAPIHelper):
 
     def __init__(self, user_params):
+        super().__init__(user_params)
         self._user_params = user_params
 
     def build_search_url(self):
